@@ -135,5 +135,6 @@ class AVLTree:
 
             temp = self.min_value_node(root.right)
 
+
             root.enrollment_id = temp.enrollment_id
             root.name = temp.name
