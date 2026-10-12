@@ -1,0 +1,40 @@
+queue = [None] * 5
+front = -1
+rear = -1
+
+
+def enqueue(car):
+    global front, rear
+    if rear == 4:
+        print("Queue Overflow: Parking Full")
+    else:
+        if front == -1:
+            front = 0
+        rear += 1
+        queue[rear] = car
+        print("Car Entered:", car)
+
+
+def dequeue():
+    global front, rear
+    if front == -1 or front > rear:
+        print("Queue Underflow: No Cars to Exit")
+    else:
+        print("Car Exited:", queue[front])
+        front += 1
+
+
+def display():
+    if front == -1 or front > rear:
+        print("Parking Lot is Empty")
+    else:
+        print("Cars in Parking Lot:", queue[front:rear + 1])
+
+
+enqueue("KA01AB1234")
+enqueue("TN22CD5678")
+enqueue("KL07EF9012")
+display()
+
+dequeue()
+display()
